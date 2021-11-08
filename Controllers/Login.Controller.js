@@ -7,7 +7,6 @@ exports.login = (req, res) => {
     Login.findOne({email: req.body.email, password: req.body.password})
     .then((data) => {
       if(data === null) {
-        console.log("data", data)
         res.send({
           hasError: true,
           message:"Invalid Email or Password"
